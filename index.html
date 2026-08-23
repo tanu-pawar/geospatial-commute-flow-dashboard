@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Geospatial Commute Flow Dashboard</title>
+<style>
+  :root {
+    --bg: #eef2f5;
+    --panel: #ffffff;
+    --text: #17202a;
+    --muted: #5f6b76;
+    --accent: #174a7e;
+    --line: #d8dee4;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+  }
+  header {
+    background: var(--accent);
+    color: white;
+    padding: 28px 5vw;
+  }
+  header h1 { margin: 0 0 8px; font-size: 30px; }
+  header p { margin: 0; opacity: .9; }
+  main { max-width: 1400px; margin: 24px auto; padding: 0 18px; }
+  .panel {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    margin-bottom: 22px;
+    overflow: hidden;
+  }
+  .panel h2 {
+    font-size: 20px;
+    margin: 0;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--line);
+  }
+  .panel p {
+    margin: 0;
+    padding: 12px 20px;
+    color: var(--muted);
+  }
+  iframe {
+    display: block;
+    width: 100%;
+    height: 680px;
+    border: 0;
+  }
+  .small iframe { height: 560px; }
+  footer {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 18px 30px;
+    color: var(--muted);
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Geospatial Commute Flow Dashboard</h1>
+  <p>Interactive 3D origin-destination visualization of Bay Area commute flows</p>
+</header>
+
+<main>
+  <section class="panel">
+    <h2>Interactive 3D Commute Flow Map</h2>
+    <p>Orange-red indicates home/source locations; green indicates work/destination locations.
+       Arc width represents the S000 flow/job count.</p>
+    <iframe src="arc_layer_map.html" title="Interactive 3D commute flow map"></iframe>
+  </section>
+
+  <section class="panel small">
+    <h2>Additional Visualization — Top 10 Commute Flows</h2>
+    <p>This chart complements the map by ranking the largest filtered commute flows by S000.</p>
+    <iframe src="extra_visualization.html" title="Top 10 commute flow chart"></iframe>
+  </section>
+</main>
+
+<footer>
+  Exercise 5 — Big Data Visualization in Geoinformatics. Dataset and field definitions follow
+  the provided practical task sheet.
+</footer>
+</body>
+</html>
